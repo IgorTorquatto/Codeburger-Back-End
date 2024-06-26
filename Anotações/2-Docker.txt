@@ -1,0 +1,6 @@
+Baixa e instala docker e ativa a virtualização no PC
+
+COMANDOS:
+docker -v
+docker ps 
+docker run --name codeburger -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres

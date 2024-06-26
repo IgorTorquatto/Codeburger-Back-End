@@ -1,0 +1,18 @@
+MVC:
+Em 'src' cria-se uma pasta 'app' e dentro 'controllers' e 'models'
+
+DATABASE com POSTGRES e SEQUELIZE:
+
+POSTGRES:
+Cria o database usando apps como o DBeaver ou Postbird
+
+INSTALAÇÕES:
+yarn add sequelize-cli -D
+yarn add pg pg-hstore
+
+PASTAS:
+Em 'src':
+cria pasta 'config' e dentro o arquivo 'database.js'
+cria pasta 'database' e dentro um arquivo 'index.js' e uma pasta 'migrations'
+
+Na pasta raiz cria um arquivo chamado '.sequelizerc'
