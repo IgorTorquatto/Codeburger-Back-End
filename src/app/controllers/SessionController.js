@@ -11,8 +11,9 @@ class SessionController {
         })
 
         const userEmailorPasswordIncorrect = () => {
-            return response.status(400).json({ error: "Tenha certeza de que sua senha ou email estejam corretos" })
+            return response.status(401).json({ error: "Tenha certeza de que sua senha ou email estejam corretos" })
         }
+
         if (!(await schema.isValid(request.body))) {
             userEmailorPasswordIncorrect()
         }
@@ -31,12 +32,13 @@ class SessionController {
             userEmailorPasswordIncorrect()
         }
 
-        return response.json({ id: user.id,
+        return response.json({ 
+            id: user.id,
             email,
             name: user.name,
             admin: user.admin,
             token: jwt.sign(
-                {id: user.id},
+                {id: user.id, name: user.name},
                 authConfig.secret,
                 {expiresIn: authConfig.expiresIn}
             )
