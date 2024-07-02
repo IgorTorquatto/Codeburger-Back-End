@@ -4,3 +4,7 @@ COMANDOS:
 docker -v
 docker ps 
 docker run --name codeburger -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+
+Mongo:
+
+docker run --name mongo -p 27017:27017 -d -t mongo
