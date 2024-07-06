@@ -1,8 +1,8 @@
 import express from "express"
 import routes from "./routes"
-import './database'
 import { resolve } from 'path'
 import cors from 'cors'
+import './database'//I just want this class to be instantiated and run this file
 
 class App{
     constructor(){
