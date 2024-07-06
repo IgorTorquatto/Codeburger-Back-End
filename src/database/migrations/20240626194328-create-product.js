@@ -14,21 +14,23 @@ module.exports = {
        name:{
         type: Sequelize.STRING,
         allowNull: false,
-
        },
+
        price:{
         type: Sequelize.INTEGER,
         allowNull: false,
        },
+
        category:{
         type: Sequelize.STRING,
         allowNull: false,
        },
+
        path:{
         type: Sequelize.STRING,
         allowNull: false
-
        },
+
        created_at: {
         type: Sequelize.DATE,
         allowNull: false
@@ -38,12 +40,12 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false
       }
+
       });
-     
+      
   },
 
   async down (queryInterface) {
      await queryInterface.dropTable('products');
-     
   }
 };

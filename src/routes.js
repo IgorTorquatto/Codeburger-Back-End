@@ -11,17 +11,24 @@ import multerConfig from './config/multer'
 const upload = multer(multerConfig)
 const routes = new Router()
 
+//users
 routes.post('/users', UserController.store)
 
+//sessions
 routes.post('/sessions', SessionController.store)
 
+//middleware
 routes.use(authMiddleware) //the routes below will receive this middleware
+
+//products
 routes.post('/products',upload.single('file'), ProductController.store)
 routes.get('/products', ProductController.index)
 
+//categories
 routes.post('/categories',CategoryController.store)
 routes.get('/categories', CategoryController.index)
 
+//orders
 routes.post('/orders',OrderController.store)
 
 export default routes
