@@ -4,12 +4,11 @@ import authConfig from '../../config/auth'
 export default (request,response,next)=>{
     const authToken = request.headers.authorization
 
-
     if(!authToken){
         return response.status(401).json({error: "Token not provided"})
     }
 
-    const token = authToken.split(' ')[1]
+    const token = authToken.split(' ')[1] //capture token from authorization headers
 
     try{
         jwt.verify(token,authConfig.secret,function(err,decoded){
@@ -24,6 +23,5 @@ export default (request,response,next)=>{
     }catch(err){
         return response.status(401).json({error: 'Token is invalid'})
     }
-
 
 }

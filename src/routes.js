@@ -13,11 +13,12 @@ const routes = new Router()
 
 //users
 routes.post('/users', UserController.store)
+routes.get('/users', UserController.index)
 
 //sessions
 routes.post('/sessions', SessionController.store)
 
-//middleware
+//middleware token authentication
 routes.use(authMiddleware) //the routes below will receive this middleware
 
 //products
