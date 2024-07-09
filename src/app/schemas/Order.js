@@ -12,6 +12,7 @@ const OrderSchema = new mongoose.Schema({
             required: true,
         },
     },
+
     products: [
         {
             id: {
@@ -40,14 +41,18 @@ const OrderSchema = new mongoose.Schema({
             },
         },
     ],
-    status:{
+
+    status: {
         type: String,
         required: true,
     },
+
 },
+
 {
     timestamps: true,
 }
+
 )
 
 export default mongoose.model("Order", OrderSchema)

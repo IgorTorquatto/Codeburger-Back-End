@@ -24,12 +24,16 @@ routes.use(authMiddleware) //the routes below will receive this middleware
 //products
 routes.post('/products',upload.single('file'), ProductController.store)
 routes.get('/products', ProductController.index)
+routes.put('/products/:id', upload.single('file'), ProductController.update)
 
 //categories
 routes.post('/categories',CategoryController.store)
 routes.get('/categories', CategoryController.index)
+routes.put('/categories/:id', upload.single('file'), CategoryController.update)
 
 //orders
 routes.post('/orders',OrderController.store)
+routes.get('/orders',OrderController.index)
+routes.put('/orders/:id', OrderController.update)
 
 export default routes

@@ -25,6 +25,8 @@ class OrderController {
 
     const productsId = request.body.products.map((product) => product.id)
 
+    //with the product ID we make a query at the bank to receive your cost information
+    
     const updatedProducts = await Product.findAll({
       where: {
         id: productsId,
