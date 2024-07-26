@@ -24,7 +24,7 @@ git clone https://github.com/IgorTorquatto/Codeburger-Back-End.git
 cd Codeburger-Back-End
 ```
 
-### 1. Crie os containers Docker
+### 2. Crie os containers Docker
 
 ```bash
 docker run --name codeburger -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
