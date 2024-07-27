@@ -12,6 +12,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
 - [Node.js](https://nodejs.org/en/)
 - [Yarn](https://classic.yarnpkg.com/en/docs/install)
 - [Docker](https://www.docker.com/)
+- [DBeaver](https://dbeaver.io/download/)
 
 ## Instalação
 
@@ -24,7 +25,13 @@ git clone https://github.com/IgorTorquatto/Codeburger-Back-End.git
 cd Codeburger-Back-End
 ```
 
-### 2. Crie os containers Docker
+### 2. Instale as dependências do backend
+
+```bash
+yarn install
+```
+
+### 3. Crie os containers Docker
 
 ```bash
 docker run --name codeburger -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
@@ -32,12 +39,21 @@ docker run --name codeburger -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postg
 docker run --name mongo -p 27017:27017 -d -t mongo
 ```
 
-### 3. Instale as dependências do backend
+### 4. Crie um banco de dados postgres no DBaver com as seguintes configs
 
 ```bash
-yarn install
+POSTGRES_USERNAME: postgres
+POSTGRES_PASSWORD: postgres
+POSTGRES_DB: codeburger
 ```
-### 4. Execute o backend
+
+### 5. Execute as migrations
+
+```bash
+yarn sequelize db:migrate
+```
+
+### 6. Execute o backend
 
 ```bash
 yarn dev
